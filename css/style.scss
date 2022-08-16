@@ -1,0 +1,657 @@
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Source Sans Pro';
+}
+
+.container{
+	width: 1200px;
+	margin: 0 auto;
+	max-width: 100%;
+	box-sizing: border-box;
+	padding: 0 15px;
+}
+
+header{
+	background: #23abf1;
+	padding-top: 40px;
+	.under-header{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.logo, .important{
+			max-width: 100%;
+			display: block;
+			img{
+				width: 100%;
+				max-width: 100%;
+				display: block;
+			}
+		}
+		.important{
+			width: 22px;
+			&:hover{
+				opacity: .7;
+			}
+		}
+		.logo{
+			width: 270px;
+		}
+	}
+
+	h1{
+		font-size: 32px;
+		color: #fff;
+		margin: 60px 0 40px;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	.search-vacans{
+		width: 1130px;
+		margin: 0 auto;
+		max-width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.input-block{
+			max-width: 84.5%;
+			width: 100%;
+			display: flex;
+			position: relative;
+			cursor: pointer;
+			.image-search{
+				width: 25px;
+				position: absolute;
+				display: block;
+				left: 15px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.name-vac{
+				max-width: 60%;
+				width: 100%;
+				border-radius: 5px 0 0 5px;
+				padding: 0 20px 0 55px;
+			}
+			.city-input, .vacans{
+				max-width: 20%;
+				width: 100%
+			}
+			.name-vac, .city-input, .vacans{
+				margin: 0;
+				height: 47px;
+				outline: none;
+				border: none;
+				box-sizing: border-box;
+				&::placeholder{
+					font-size: 15px;
+					font-family: 'Source Sans Pro';
+					color: #000;
+					opacity: .66;
+					line-height: 1;
+				}
+			}
+			.city-input{
+				border-radius: 0 5px 5px 0;
+				padding: 0 20px;
+			}
+			.select{
+				input{
+					height: 47px;
+					border-left: 1px solid #c7c7c7;
+					border-right: 1px solid #c7c7c7;
+					width: 100%;
+					max-width: 100%;
+					cursor: pointer;
+					padding: 0 20px;
+				}
+			}
+		}
+		.find{
+			min-width: 160px;
+			height: 47px;
+			margin-left: 15px;
+			background: #006ba2;
+			color: #fff;
+			font-size: 21px;
+			font-weight: bold;
+			&:hover{
+				background: #00537d;
+			}
+		}
+	}
+
+	nav{
+		margin: 0;
+		padding: 0;
+		ul.menu{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: flex;
+			justify-content: space-between;
+			margin-top: 55px;
+			li.menu-list{
+				height: 65px;
+				max-width: 100%;
+				display: flex;
+				align-items: center;
+				a{
+					display: flex;
+					align-items: center;
+					font-size: 19px;
+					line-height: 1.2;
+					font-weight: 600;
+					color: #fff;
+					text-decoration: none;
+					span{
+						margin-left: 10px;
+					}
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+
+			}
+			.open-menu{
+				position: relative;
+				ul{
+					width: 265px;
+					border-radius: 5px;
+					background: #fff;
+					display: none;
+					padding: 25px 20px 10px;
+					list-style: none;
+					box-sizing: border-box;
+					position: absolute;
+					top: calc(100% - 5px);
+					right: -20px;
+					z-index: 9999;
+					box-shadow: 0 0 40px rgba(1, 1, 1, 0.1);
+					li a{
+						font-size: 19px;
+						color: #006ba2;
+						font-weight: 600;
+						line-height: 1.2;
+						margin-bottom: 15px;
+						display: block;
+					}
+					&.active{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.select{
+	position: relative;
+	ul{
+		width: 100%;
+		list-style: none;
+		max-width: 100%;
+		border-radius: 5px;
+		background: #fff;
+		display: none;
+		padding: 0;
+		position: absolute;
+		z-index: 999;
+		box-shadow: 0 0 40px rgba(1, 1, 1, 0.1);
+		li{
+			font-size: 17px;
+			line-height: 1.2;
+			 color: #000;
+			 padding: 5px 15px;
+			 cursor: pointer;
+			 &:first-child{
+			 	border-radius: 5px 5px 0 0;
+			 }
+			 &:last-child{
+			 	border-radius: 0 0 5px 5px;
+			 }
+			 &:hover{
+			 	background: #ebebeb;
+			 }
+		}
+		&.active{
+			display: block;
+		}
+	}
+	input{
+		outline: none;
+		border: none;
+		box-sizing: border-box;
+	}
+}
+.btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.about-container{
+	margin-top: 35px;
+	width: 100%;
+	box-sizing: border-box;
+	max-width: 100%;
+	border-radius: 5px;
+	border: 1px solid #dadada;
+	background: #f6fcfe;
+	padding: 25px 30px 35px;
+	position: relative;
+	.about-tittle{
+		font-size: 22px;
+		line-height: 1.2;
+		font-weight: 600;
+		color: #000000;
+	}
+	.person-image{
+		width: 130px;
+		max-width: 100%;
+		position: absolute;
+		right: 30px;
+		bottom: 0;
+	}
+	p{
+		font-size: 16px;
+		color: #000000;
+		line-height: 1.66;
+		margin-top: 20px;
+		margin-bottom: 0;
+		width: 940px;
+		max-width: 100%;
+		a{
+			font-weight: bold;
+			color: #1c89c1;
+			text-decoration: none;
+		}
+	}
+}
+
+
+.vacansies-container{
+	margin-top: 20px;
+	.block-tittle{
+		font-size: 29px;
+		color: #000000;
+		line-height: 1.2;
+	}
+	.vacansies-location{
+		font-size: 17px;
+		color: #7a7a7a;
+		line-height: 1.2;
+		margin-top: 20px;
+		a{
+			text-decoration: none;
+			font-weight: bold;
+			color: #1c89c1;
+		}
+	}
+	.vacansies-wrapper{
+		.vacansies-card{
+			padding: 30px 30px 40px;
+			border-radius: 5px;
+			margin-top: 30px;
+			border: 1px solid #dadada;
+			box-sizing: border-box;
+			.tittle{
+				font-size: 27px;
+				font-weight: 600;
+				line-height: 1.2;
+				color: #1c89c1;
+				text-decoration: none;
+				display: block;
+			}
+			.checkout{
+				font-size: 27px;
+				line-height: 1.2;
+				color: #000;
+				font-weight: 600;
+				margin-top: 15px;
+			}
+			p{
+				font-size: 16px;
+				color: #000000;
+				line-height: 1.66;
+				margin-top: 10px;
+				margin-bottom: 0;
+			}
+			.flex-bottom{
+				display: flex;
+				margin-top: 35px;
+				flex-wrap: wrap;
+				align-items: center;
+				.item{
+					margin-right: 70px;
+					color: #7a7a7a;
+					font-size: 14px;
+					line-height: 1.2;
+					span{
+						color: #2a8ec3;
+						&.date{
+							color: #000;
+						}
+					}
+					&:last-child{
+						margin-right: 0;
+					}
+				}
+			}
+			.card-buttons{
+				display: flex;
+				align-items: center;
+				justify-content: right;
+				.important-btn{
+					width: 22px;
+					max-width: 100%;
+					outline: none;
+					border: none;
+					cursor: pointer;
+					background: transparent;
+					padding: 0;
+					margin-right: 40px;
+					&:hover{
+						opacity: .7;
+					}
+				}
+				.more{
+					width: 150px;
+					height: 44px;
+					border: 1px solid #1c89c1;
+					border-radius: 5px;
+					font-size: 17px;
+					line-height: 1;
+					background: #fff;
+					color: #1c89c1;
+					&:hover{
+						color: #fff;
+						background: #1c89c1;
+					}
+				}
+			}
+		}
+	}
+}
+
+footer{
+	padding: 35px 0 140px;
+	background: #5c686e;
+	margin-top: 80px;
+	.footer-container{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			li{
+				margin-right: 50px;
+				a{
+					text-decoration: none;
+					color: #fff;
+					line-height: 1.2;
+					font-size: 16px;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		.copyright{
+			font-size: 16px;
+			line-height: 1.2;
+			color: #fff;
+			opacity: .45;
+		}
+	}
+}
+
+
+.back-to-main{
+	text-decoration: none;
+	color: #000;
+	line-height: 1.2;
+	font-size: 16px;
+	margin-bottom: 25px;
+	margin-top: 30px;
+	display: block;
+}
+
+.vac-container{
+	.tittle-vac{
+		font-size: 27px;
+		font-weight: 600;
+		line-height: 1.2;
+		color: #1c89c1;
+	}
+	.checkout{
+		font-size: 27px;
+		font-weight: 600;
+		line-height: 1.2;
+		color: #000;
+		margin-top: 15px;
+	}
+	.loction-data{
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		.item{
+			font-size: 15px;
+			line-height: 1.2;
+			color: #000;
+			margin-right: 20px;
+			margin-top: 10px;
+			&:nth-child(n+2){
+				margin-right: 0;
+			}
+			&:last-child{
+				width: 100%;
+			}
+			span{
+				color: #2a8ec3;
+			}
+		}
+	}
+	.vac-data{
+		font-size: 16px;
+		font-weight: bold;
+		color: #000;
+		line-height: 1.5;
+		&.block{
+			margin-top: 15px;
+			span{
+				display: block;
+				margin-top: 2px;
+			}
+		}
+		span{
+			font-weight: normal;
+			p{
+				margin: 0;
+			}
+		}
+	}
+	.contacts-container{
+		padding: 15px 25px 25px;
+		border-radius: 5px;
+		background: #f6fcfe;
+		border: 1px solid #dadada;
+		box-sizing: border-box;
+		margin-top: 20px;
+		.tittle{
+			font-size: 16px;
+			line-height: 1.2;
+			font-weight: bold;
+			color: #000;
+			margin-bottom: 13px;
+		}
+		a{
+			text-decoration: none;
+			font-size: 16px;
+			color: #000;
+			display: block;
+			margin-bottom: 7px;
+			&:hover{
+				text-decoration: underline;
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+			&.email{
+				color: #2a8ec3;
+			}
+		}
+	}
+	.subscribe-btn{
+		width: 260px;
+		font-size: 17px;
+		max-width: 100%;
+		padding: 0 10px;
+		background: #fff;
+		border: 1px solid #1c89c1;
+		color: #1c89c1;
+		height: 44px;
+		margin-left: auto;
+		margin-top: 40px;
+		&:hover{
+			background: #1c89c1;
+			color: #fff;
+		}
+	}
+
+}
+
+
+
+
+@media screen and (max-width: 1200px){
+	.container{
+		width: 900px;
+	}
+	.about-container p{
+		width: 640px;
+	}
+}
+
+@media screen and (max-width: 991px){
+	// header nav ul.menu{
+	// 	display: block;
+	//     width: 100%;
+	//     position: absolute;
+	//     height: 100%;
+	//     z-index: 999;
+	//     top: 0;
+	//     left: 0;
+	//     right: 0;
+	//     background: #fff;
+	//     margin-top: 0;
+	// }
+
+	.container{
+		width: 600px;
+	}
+
+	header .search-vacans{
+		flex-direction: column;
+	}
+	header .search-vacans .find{
+		margin-left: 0;
+		width: 100%;
+		margin-top: 15px;
+	}
+	header .search-vacans .input-block{
+		max-width: 100%;
+	}
+	header nav ul.menu{
+		display: block;
+	}
+	header nav ul.menu .open-menu ul{
+		width: 100%;
+		left: 0;
+	}
+	header{
+		padding-bottom: 40px;
+	}
+	.about-container .person-image{
+		display: none;
+	}
+	.vacansies-container .vacansies-wrapper .vacansies-card .flex-bottom .item{
+		margin-top: 10px;
+	}
+	.vacansies-container .vacansies-wrapper .vacansies-card .flex-bottom{
+		margin-top: 10px;
+	}
+	.vacansies-container .vacansies-wrapper .vacansies-card .card-buttons{
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 676px){
+	.container{
+		width: 500px;
+	}
+	footer .footer-container{
+		flex-direction: column;
+	}
+	footer .footer-container .copyright{
+		margin-top: 20px;
+	}
+	footer .footer-container ul li:last-child{
+		margin-right: 0
+	}
+}
+
+@media screen and (max-width: 480px){
+	.vacansies-container .vacansies-wrapper .vacansies-card, .about-container{
+		padding: 15px;
+	}
+	header .search-vacans .input-block{
+		flex-direction: column;
+	}
+	header .search-vacans .input-block .name-vac, header .search-vacans .input-block .city-input, header .search-vacans .input-block .vacans{
+		max-width: 100%;
+		border-radius: 0;
+	}
+	header .search-vacans .input-block .select input{
+		border-left: 0;
+		border-right: 0;
+		border-top: 1px solid #c7c7c7;
+		border-bottom: 1px solid #c7c7c7;
+	}
+	header .search-vacans .input-block .name-vac{
+		border-radius: 5px 5px 0 0;
+	}
+	header .search-vacans .find{
+		margin-top: 0;
+		border-radius: 0 0 5px 5px;
+	}
+	.select ul{
+		margin: 0;
+	}
+	header .search-vacans .input-block .image-search{
+		top: 9%;
+		transform: unset;
+	}
+	header .under-header .logo{
+		width: 200px;
+	}
+	.vac-container .contacts-container{
+		padding: 15px;
+	}
+	.vac-container .subscribe-btn{
+		width: 100%;
+		height: 50px;
+	}
+}
